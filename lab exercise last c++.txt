@@ -1,0 +1,138 @@
+1.
+write a c++ program to demonstrate the concept of function overloading (Same Function with different parameters)
+
+#include <iostream>
+using namespace std;
+
+
+float absolute(float var){
+    if (var < 0.0)
+        var = -var;
+    return var;
+}
+
+
+int absolute(int var) {
+     if (var < 0)
+         var = -var;
+    return var;
+}
+
+int main() {
+    
+    
+    cout << "Absolute value of -5 = " << absolute(-5) << endl;
+
+    
+    cout << "Absolute value of 5.5 = " << absolute(5.5f) << endl;
+    return 0;
+}
+
+
+
+####################################################################################
+2. Write a
+C++ program using class to show usage of constructor & destructor. Class
+name: peptide members: seq_length, seq methods: peptide () {constructor},
+show_pep() & ~peptide()
+{destructor} Variation: try with multiple construction function (overloading)
+
+
+#include<iostream>
+using namespace std;
+
+class peptide{
+    int seq_length;
+    public:
+    peptide(){
+        //default constructor
+        cout<<" Default Constructor called\n";
+        seq_length=0;
+    }
+    peptide(int sql_length){
+        //parameterised constructor
+        cout<<" Parameterized Constructor called\n";
+       this-> seq_length=seq_length;
+    }
+
+    void show_pep() {
+        cout<<seq_length<<"\n";
+    }
+    ~peptide(){
+        cout<<"Destructor called\n";
+
+    }};
+int main(){
+    peptide p(10);
+    p.show_pep();
+    return 0;
+}
+
+#####################################################################################################
+3. Create a
+simple class to demonstrate accessing data member. Class name: Proteins  Member variables: Name, length, organism, function. Methods: getname(), getlength(),
+getorganism(), getfun(), protshow()
+
+#include <iostream>
+using namespace std;
+class A {
+    public:
+    int x;
+    void getx()
+    {
+        cout<<"enter the value of x:  ";cin >> x;
+    }};
+class B{
+    public:
+    int y;
+    void gety()
+    {
+        cout<<"enter the value of y:  ";cin >> y;
+    }};
+class C : public A,public B
+{
+    public:
+    void sum()
+    {
+        cout<<"Sum = "<<x+y;
+
+    }};
+int main()
+{
+    C obj1;
+    obj1.getx();
+    obj1.gety();
+    obj1.sum();
+    return 0;
+}
+ 
+#################################################################
+4..Create a
+simple inherited class & access variables present in two class using scope
+resolution operator
+
+#include <iostream>
+
+float absolute(float var){
+    if (var < 0.0)
+        var = -var;
+    return var;
+}
+
+// function with int type parameter
+int absolute(int var) {
+     if (var < 0)
+         var = -var;
+    return var;
+}
+
+int main() {
+    
+    // call function with int type parameter
+    cout << "Absolute value of -5 = " << absolute(-5) << endl;
+
+    // call function with float type parameter
+    cout << "Absolute value of 5.5 = " << absolute(5.5f) << endl;
+    return 0;
+}
+########################################################
